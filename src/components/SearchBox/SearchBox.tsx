@@ -33,7 +33,7 @@ export const SearchBox: React.FC<Props> = ({
           date: new Date(response.time * 1000),
           temperature: response.temperature.current,
           description: response.condition.description,
-          icon: `/images/${response.condition.icon}.png`,
+          icon: `./images/${response.condition.icon}.png`,
           wind: response.wind.speed,
           humidity: response.temperature.humidity,
           pressure: response.temperature.pressure,
@@ -51,7 +51,7 @@ export const SearchBox: React.FC<Props> = ({
         onSubmit={handleSubmit}
       >
         <img
-          src="/images/akar-icons_search.svg"
+          src="./images/akar-icons_search.svg"
           alt="search-icon"
           className="SearchBox__icon"
         />

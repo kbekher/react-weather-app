@@ -27,7 +27,7 @@ export const WeatherApp = () => {
           date: new Date(response.time * 1000),
           temperature: response.temperature.current,
           description: response.condition.description,
-          icon: `/images/${response.condition.icon}.png`,
+          icon: `./images/${response.condition.icon}.png`,
           wind: response.wind.speed,
           humidity: response.temperature.humidity,
           pressure: response.temperature.pressure,

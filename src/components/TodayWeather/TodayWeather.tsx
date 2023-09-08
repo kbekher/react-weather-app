@@ -49,21 +49,21 @@ export const TodayWeather: React.FC<Props> = ({ data }) => {
           name="Wind"
           value={wind}
           unit="m/h"
-          img="/images/Wind.svg"
+          img="./images/Wind.svg"
           alt="wind icon"
         />
         <PropertyBox
           name="Humidity"
           value={humidity}
           unit="%"
-          img="/images/Humidity.svg"
+          img="./images/Humidity.svg"
           alt="humidity icon"
         />
         <PropertyBox
           name="Pressure"
           value={pressure}
           unit="hPa"
-          img="/images/Pressure.svg"
+          img="./images/Pressure.svg"
           alt="pressure icon"
         />
       </div>
