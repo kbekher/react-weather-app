@@ -24,6 +24,10 @@ export const SearchBox: React.FC<Props> = ({
 
     setErrorMessage('');
 
+    if (!city.trim()) {
+      return;
+    }
+
     getCityWeather(city)
       .then(response => {
         setWeatherData({
