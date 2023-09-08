@@ -1,0 +1,44 @@
+@import '../../styles/utils';
+
+.WeekDay {
+  // width: 396px;
+  width: 346px;
+  // height: 85px;
+  height: 82px;
+  background-color: rgba(217, 217, 217, 0.07);
+  border-radius: 8px;
+  padding: 8px 32px;
+  display: flex;
+  justify-content: space-between;
+
+  @include onPhone {
+    max-width: 346px;
+    padding: 6px 20px;
+  }
+
+  &__day {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__day,
+  &__date {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    position: relative;
+    top: 10px;
+  }
+
+  &__temperature {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    position: relative;
+    top: 14px;
+  }
+
+  &__icon {
+    width: 108px;
+    height: 69px;
+  }
+}

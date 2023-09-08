@@ -1,0 +1,108 @@
+@import '../../styles/utils';
+
+.TodayWeather {
+  @include onPhone {
+    height: 360px;
+  }
+
+  &__main-info {
+    position: relative;
+    background-color: rgba(217, 217, 217, 0.07);
+    border: 1px solid rgba(61, 65, 87, 0.386);
+    border-radius: 8px;
+    // height: 361px;
+    height: 342px;
+    padding: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include onTablet {
+      height: 350px;
+    }
+
+    @include onPhone {
+      height: 264px;
+      padding: 22px;
+    }
+  }
+
+  &__text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      max-width: 250px;
+    }
+
+    @include onPhone {
+      max-width: 164px;
+    }
+  }
+
+  &__image-section {
+    // width: 350px;
+    width: 310px;
+    padding-top: 40px;
+    text-align: center;
+
+    @include onPhone {
+      max-width: 228px;
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @include onPhone {
+      max-width: 90%;
+    }
+  }
+
+  &__city {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 41px;
+
+    @include onTablet {
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    @include onPhone {
+      line-height: 30px;
+
+    }
+  }
+
+  &__current-date {
+    @extend %medium-text;
+
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+  }
+
+  &__description {
+    @extend %medium-text;
+
+    color: rgba(255, 255, 255, 0.7);
+    width: 290px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__properties {
+    margin: 0 auto;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+}

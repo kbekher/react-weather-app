@@ -1,0 +1,57 @@
+@import '../../styles/utils';
+
+.WeatherApp {
+  font-family: "Belgrano", serif;
+  font-family: "Space Grotesk", sans-serif;
+  color: white;
+
+  background-image: url('../../../public/images/Bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-width: 100vh;
+  min-height: 100vh;
+
+  @include onTablet {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 60px;
+    // max-width: 1280px;
+    max-width: 1120px;
+  }
+
+  &__error-message {
+    text-align: center;
+  }
+}
+
+.Weather {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  @include onTablet {
+    flex-direction: column;
+  }
+
+  &__container {
+    // width: 776px;
+
+    @include onTablet {
+      max-width: 540px;
+    }
+
+    @include onPhone {
+      max-width: 346px;
+      height: 410px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../styles/utils';
+
+.SearchBox {
+  position: relative;
+  max-height: 56px;
+  margin-bottom: 8px;
+  padding: 16px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.288);
+  border-radius: 8px;
+
+  @include onPhone {
+    padding: 9px 20px;
+  }
+
+  &__icon {
+    width: 19px;
+
+    @include onPhone {
+      width: 12px;
+    }
+  }
+
+  &__input {
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    padding-left: 20px;
+    outline: none;
+    width: 90%;
+
+    @include onPhone {
+      font-size: 14px;
+      padding-left: 9px;
+    }
+  }
+}

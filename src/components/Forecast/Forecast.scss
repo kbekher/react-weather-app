@@ -1,0 +1,21 @@
+@import '../../styles/utils';
+
+.Forecast {
+  margin-top: 64.6px;
+  // width: 396px;
+
+  @include onPhone {
+    max-width: 346px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+
+    @include onTablet {
+      align-items: center;
+    }
+  }
+}
