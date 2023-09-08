@@ -1,6 +1,6 @@
 import './Footer.scss';
 
-export const Footer = () => (
+export const Footer: React.FC = () => (
   <footer className="Footer">
     <p>
       This project was coded by{" "}
@@ -14,7 +14,7 @@ export const Footer = () => (
       </a>{" "}
       and is
       <a
-        href="https://github.com/NinjaGexly/midnight-react-weather-app"
+        href="https://kbekher.github.io/react-weather-app/"
         target="_blank"
         rel="noreferrer"
         className="Footer__link"

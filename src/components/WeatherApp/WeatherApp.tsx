@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCityWeather } from '../../services/weather';
 import { Weather } from '../../types/Weather';
 import { Loader } from '../Loader';
@@ -9,7 +9,7 @@ import { Forecast } from '../Forecast';
 
 import './WeatherApp.scss';
 
-export const WeatherApp = () => {
+export const WeatherApp: React.FC = () => {
   const [weatherData, setWeatherData] = useState<Weather | null>();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');

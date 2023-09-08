@@ -5,7 +5,6 @@
   flex-flow: row wrap;
   align-content: center;
   gap: 4px;
-  // width: 350px;
   width: 300px;
 
   @include onTablet {
@@ -111,6 +110,5 @@
     &:hover {
       cursor: pointer;
     }
-
   }
 }

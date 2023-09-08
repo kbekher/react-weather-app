@@ -21,8 +21,7 @@
     margin: 0 auto;
     padding: 0;
     padding-top: 60px;
-    max-width: 1280px;
-    // max-width: 1120px;
+    max-width: 1180px;
   }
 
   &__error-message {
@@ -43,8 +42,6 @@
   }
 
   &__container {
-    // width: 776px;
-
     @include onTablet {
       max-width: 540px;
     }

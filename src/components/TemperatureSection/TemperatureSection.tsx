@@ -53,5 +53,5 @@ export const TemperatureSection: React.FC<Props> = ({
       </div>
       <div className="TemperatureSection__description">{description}</div>
     </div>
-  )
-}
+  );
+};

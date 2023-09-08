@@ -16,9 +16,8 @@ export const PropertyBox: React.FC<Props> = ({
   unit,
   img,
   alt,
-}) => {
-  return (
-    <div className="PropertyBox">
+}) => (
+  <div className="PropertyBox">
     <div className="PropertyBox__text-section">
       <span className="PropertyBox__name"> {name}</span>
       <div className="PropertyBox__value">
@@ -26,12 +25,11 @@ export const PropertyBox: React.FC<Props> = ({
       </div>
     </div>
     <div className="PropertyBox__image-section">
-      <img 
-        src={img} 
+      <img
+        src={img}
         alt={alt}
         className="PropertyBox__img"
       />
     </div>
   </div>
-  )
-}
+);

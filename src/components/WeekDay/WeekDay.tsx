@@ -67,5 +67,5 @@ export const WeekDay: React.FC<Props> = ({ data }) => {
       />
     </div>
   </div>
-  )
-}
+  );
+};
