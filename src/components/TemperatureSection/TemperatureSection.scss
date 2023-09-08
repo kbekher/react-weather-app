@@ -40,7 +40,7 @@
     width: 156px;
     height: 91px;
     border-radius: 8px;
-    background-color: rgba(217, 217, 217, 0.07);
+    background-color: $dark-gray;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -58,7 +58,7 @@
   }
 
   &__description {
-    color: rgba(255, 255, 255, 0.7);
+    color: $light-grey;
     font-size: 18px;
     font-weight: 400;
     line-height: 23px;
@@ -75,14 +75,14 @@
   width: 77px;
 
   &__link {
-    color: rgba(255, 255, 255, 0.3);
+    color: $dark-gray-links;
     font-size: 80px;
     font-weight: 400;
     line-height: 90px;
     text-decoration: none;
 
     &:hover {
-      color: rgba(255, 255, 255, 0.3);
+      color: $dark-gray-links;
       cursor: unset;
     }
 
@@ -98,7 +98,7 @@
   }
 
   &--turned-off {
-    background: rgba(255, 255, 255, 0.3);
+    background: $dark-gray-links;
     border-radius: 8px;
 
     & a {

@@ -7,7 +7,7 @@
 
   &__main-info {
     position: relative;
-    background-color: rgba(217, 217, 217, 0.07);
+    background-color: $dark-gray;
     border: 1px solid rgba(61, 65, 87, 0.386);
     border-radius: 8px;
     height: 342px;
@@ -80,14 +80,14 @@
   &__current-date {
     @extend %medium-text;
 
-    color: rgba(255, 255, 255, 0.7);
+    color: $light-grey;
     margin-top: 8px;
   }
 
   &__description {
     @extend %medium-text;
 
-    color: rgba(255, 255, 255, 0.7);
+    color: $light-grey;
     width: 290px;
 
     &::first-letter {
