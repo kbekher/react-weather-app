@@ -35,7 +35,7 @@ export const WeatherApp: React.FC = () => {
     <div className="WeatherApp">
       <div className="WeatherApp__container">
 
-        {errorMessage && (
+      {errorMessage && (
           <h1 className="WeatherApp__error-message">
             {errorMessage}
           </h1>
@@ -47,16 +47,12 @@ export const WeatherApp: React.FC = () => {
           <div className="Weather">
             <div className="Weather__container">
               <SearchBox />
-
               <TodayWeather />
             </div>
-
             <Forecast />
-            
             <Footer />
           </div>
         )}
-
       </div>
     </div>
   );
