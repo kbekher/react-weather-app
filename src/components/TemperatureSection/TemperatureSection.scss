@@ -40,7 +40,7 @@
     width: 156px;
     height: 91px;
     border-radius: 8px;
-    background-color: $dark-gray;
+    background-color: $dark-grey;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -75,14 +75,14 @@
   width: 77px;
 
   &__link {
-    color: $dark-gray-links;
+    color: $dark-grey-links;
     font-size: 80px;
     font-weight: 400;
     line-height: 90px;
     text-decoration: none;
 
     &:hover {
-      color: $dark-gray-links;
+      color: $dark-grey-links;
       cursor: unset;
     }
 
@@ -98,7 +98,7 @@
   }
 
   &--turned-off {
-    background: $dark-gray-links;
+    background: $dark-grey-links;
     border-radius: 8px;
 
     & a {
