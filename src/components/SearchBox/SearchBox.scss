@@ -27,13 +27,19 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-    padding-left: 20px;
+    padding-left: 40px;
     outline: none;
     width: 90%;
 
+    background-image: url('../../../public/images/akar-icons_search.svg');
+    background-repeat: no-repeat;
+    background-size: 19px 19px;
+    background-position: left center;
+
     @include onPhone {
       font-size: 14px;
-      padding-left: 9px;
+      padding-left: 20px;
+      background-size: 12px 12px;
     }
   }
 }

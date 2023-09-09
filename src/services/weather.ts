@@ -16,7 +16,7 @@ export function setWeather(
     date: new Date(data.time * 1000),
     temperature: data.temperature.current,
     description: data.condition.description,
-    icon: `./images/${data.condition.icon}.png`,
+    icon: data.condition.icon,
     wind: data.wind.speed,
     humidity: data.temperature.humidity,
     pressure: data.temperature.pressure,

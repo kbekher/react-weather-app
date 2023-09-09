@@ -14,7 +14,6 @@ export const WeekDay: React.FC<Props> = ({ data }) => {
   } = data;
 
   let tempValue = Math.round(temperature.day);
-  let icon = `images/f-${condition.icon}.png`;
 
   function formatDay(timestamp: number) {
     let date = new Date(timestamp * 1000);
@@ -59,12 +58,8 @@ export const WeekDay: React.FC<Props> = ({ data }) => {
       <span className="WeekDay__date">{formatDate(time)}</span>
       <div className="WeekDay__temperature">{tempValue}° C</div>
     </div>
-    <div>
-      <img 
-        src={icon} 
-        alt={condition.description}
-        className="Weather__icon" 
-      />
+    <div className={`WeekDay__img WeekDay__img--${condition.icon}`}>
+      {' '}
     </div>
   </div>
   );

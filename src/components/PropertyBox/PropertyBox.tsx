@@ -6,16 +6,12 @@ type Props = {
   name: string;
   value: number;
   unit: string;
-  img: string;
-  alt: string;
 };
 
 export const PropertyBox: React.FC<Props> = ({
   name,
   value,
   unit,
-  img,
-  alt,
 }) => (
   <div className="PropertyBox">
     <div className="PropertyBox__text-section">
@@ -24,12 +20,8 @@ export const PropertyBox: React.FC<Props> = ({
         {value} {unit}
       </div>
     </div>
-    <div className="PropertyBox__image-section">
-      <img
-        src={img}
-        alt={alt}
-        className="PropertyBox__img"
-      />
+    <div className={`PropertyBox__img PropertyBox__img--${name}`}>
+      {' '}
     </div>
   </div>
 );

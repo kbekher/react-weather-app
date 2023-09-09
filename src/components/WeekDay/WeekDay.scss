@@ -35,8 +35,38 @@
     top: 14px;
   }
 
-  &__icon {
+  &__img {
     width: 108px;
-    height: 69px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--broken-clouds-day {
+      background-image: url('../../../public/images/f-broken-clouds-day.png');
+    }
+    &--clear-sky-day {
+      background-image: url('../../../public/images/f-clear-sky-day.png');
+    }
+    &--few-clouds-day {
+      background-image: url('../../../public/images/f-few-clouds-day.png');
+    }
+    &--mist-day {
+      background-image: url('../../../public/images/f-mist-day.png');
+    }
+    &--rain-day {
+      background-image: url('../../../public/images/f-rain-day.png');
+    }
+    &--scattered-clouds-day {
+      background-image: url('../../../public/images/f-scattered-clouds-day.png');
+    }
+    &--shower-rain-day {
+      background-image: url('../../../public/images/f-shower-rain-day.png');
+    }
+    &--snow-day{
+      background-image: url('../../../public/images/f-snow-day.png');
+    }
+    &--thunderstorm-day {
+      background-image: url('../../../public/images/f-thunderstorm-day.png');
+    }
   }
 }

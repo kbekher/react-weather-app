@@ -4,7 +4,7 @@
   background-color: $dark-grey;
   border: 1px solid rgba(61, 65, 87, 0.386);
   border-radius: 8px;
-  height: 168px;
+  height: 158px;
   width: 100%;
   padding: 16px 16px 24px 24px;
   display: flex;
@@ -56,10 +56,24 @@
 
   &__img {
     width: 96px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &--Pressure {
+      background-image: url('../../../public/images/Pressure.svg');
+    }
+
+    &--Humidity {
+      background-image: url('../../../public/images/Humidity.svg');
+    }
+
+    &--Wind {
+      background-image: url('../../../public/images/Wind.svg');
+    }
 
     @include onTablet {
-      max-width: 86px;
-      margin-top: 10px;
+      width: 84px;
     }
 
     @include onPhone {

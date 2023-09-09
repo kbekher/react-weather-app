@@ -12,7 +12,6 @@ export const TodayWeather: React.FC= () => {
   const {
     city,
     icon,
-    description,
     wind,
     humidity,
     pressure
@@ -30,12 +29,8 @@ export const TodayWeather: React.FC= () => {
           </div>
           <TemperatureSection />
         </div>
-        <div className="TodayWeather__image-section">
-          <img 
-            src={icon} 
-            alt={description}
-            className="TodayWeather__image"
-          />
+        <div className={`TodayWeather__img TodayWeather__img--${icon}`}>
+          {' '}
         </div>
       </div>
       <div className="TodayWeather__properties">
@@ -43,22 +38,16 @@ export const TodayWeather: React.FC= () => {
           name="Wind"
           value={wind}
           unit="m/h"
-          img="./images/Wind.svg"
-          alt="wind icon"
         />
         <PropertyBox
           name="Humidity"
           value={humidity}
           unit="%"
-          img="./images/Humidity.svg"
-          alt="humidity icon"
         />
         <PropertyBox
           name="Pressure"
           value={pressure}
           unit="hPa"
-          img="./images/Pressure.svg"
-          alt="pressure icon"
         />
       </div>
     </div>

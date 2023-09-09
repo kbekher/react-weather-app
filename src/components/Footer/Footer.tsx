@@ -14,7 +14,7 @@ export const Footer: React.FC = () => (
       </a>{" "}
       and is
       <a
-        href="https://kbekher.github.io/react-weather-app/"
+        href="https://github.com/kbekher/react-weather-app"
         target="_blank"
         rel="noreferrer"
         className="Footer__link"

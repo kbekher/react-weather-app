@@ -43,11 +43,6 @@ export const SearchBox: React.FC = () => {
         className="align-items-center"
         onSubmit={handleSubmit}
       >
-        <img
-          src="./images/akar-icons_search.svg"
-          alt="search-icon"
-          className="SearchBox__icon"
-        />
         <input
           type="text"
           className="SearchBox__input"
