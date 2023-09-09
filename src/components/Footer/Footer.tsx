@@ -5,7 +5,7 @@ export const Footer: React.FC = () => (
     <p>
       This project was coded by{" "}
       <a
-        href="https://leafy-basbousa-36ee27.netlify.app/"
+        href="https://github.com/kbekher"
         target="_blank"
         rel="noreferrer"
         className="Footer__link"
