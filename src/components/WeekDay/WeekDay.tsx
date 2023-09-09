@@ -62,7 +62,7 @@ export const WeekDay: React.FC<Props> = ({ data }) => {
     <div>
       <img 
         src={icon} 
-        alt="weather-icon"
+        alt={condition.description}
         className="Weather__icon" 
       />
     </div>

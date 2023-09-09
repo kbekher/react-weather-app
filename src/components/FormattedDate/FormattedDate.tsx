@@ -1,8 +1,9 @@
-type Props = {
-  date: Date;
-};
+import { useWeather } from '../../hooks/useWeather';
 
-export const FormattedDate: React.FC<Props> = ({ date }) => {
+export const FormattedDate: React.FC= () => {
+  const { weatherData } = useWeather();
+  const { date } = weatherData;
+
   let hours = date.getHours();
 
   let minutes = date.getMinutes();

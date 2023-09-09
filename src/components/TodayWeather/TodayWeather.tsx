@@ -1,25 +1,22 @@
-import { Weather } from '../../types/Weather';
+import React from 'react';
+import { useWeather } from '../../hooks/useWeather';
 import { FormattedDate } from '../FormattedDate';
 import { PropertyBox } from '../PropertyBox';
 import { TemperatureSection } from '../TemperatureSection';
 
 import './TodayWeather.scss';
 
-type Props = {
-  data: Weather;
-}
+export const TodayWeather: React.FC= () => {
+  const { weatherData } = useWeather();
 
-export const TodayWeather: React.FC<Props> = ({ data }) => {
   const {
     city,
-    date,
-    temperature,
-    description,
     icon,
+    description,
     wind,
     humidity,
     pressure
-  } = data;
+  } = weatherData;
 
   return (
     <div className="TodayWeather">
@@ -28,20 +25,17 @@ export const TodayWeather: React.FC<Props> = ({ data }) => {
           <div>
             <h1 className="TodayWeather__city">{city}</h1>
             <div className="TodayWeather__current-date">
-              <FormattedDate date={date} />
+              <FormattedDate />
             </div>
           </div>
-          <TemperatureSection
-            celsius={temperature}
-            description={description}
-          />
+          <TemperatureSection />
         </div>
         <div className="TodayWeather__image-section">
           <img 
             src={icon} 
-            alt="weather icon"
+            alt={description}
             className="TodayWeather__image"
-          ></img>
+          />
         </div>
       </div>
       <div className="TodayWeather__properties">

@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import cn from 'classnames';
+import { useWeather } from '../../hooks/useWeather';
 
 import './TemperatureSection.scss';
 
-type Props = {
-  celsius: number;
-  description: string;
-};
-
-export const TemperatureSection: React.FC<Props> = ({
-  celsius,
-  description,
-}) => {
+export const TemperatureSection: React.FC = () => {
+  const { weatherData } = useWeather();
+  const { temperature: celsius, description } = weatherData;
   const [unit, setUnit] = useState('celsius');
 
   function showFahrenheit(event: React.MouseEvent<HTMLAnchorElement>) {

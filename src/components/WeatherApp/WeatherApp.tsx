@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { getCityWeather } from '../../services/weather';
-import { Weather } from '../../types/Weather';
+import React, { useEffect } from 'react';
+import { getCityWeather, setWeather } from '../../services/weather';
+import { useWeather } from '../../hooks/useWeather';
 import { Loader } from '../Loader';
 import { SearchBox } from '../SearchBox/';
 import { Footer } from '../Footer';
@@ -10,9 +10,14 @@ import { Forecast } from '../Forecast';
 import './WeatherApp.scss';
 
 export const WeatherApp: React.FC = () => {
-  const [weatherData, setWeatherData] = useState<Weather | null>();
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const {
+    weatherData,
+    setWeatherData,
+    isLoading,
+    setIsLoading,
+    errorMessage,
+    setErrorMessage,
+  } = useWeather();
 
   useEffect(() => {
     setIsLoading(true);
@@ -20,24 +25,10 @@ export const WeatherApp: React.FC = () => {
 
     getCityWeather('Kyiv')
       .then(response => {
-        setWeatherData({
-          city: response.city,
-          latitude: response.coordinates.latitude,
-          longitude: response.coordinates.longitude,
-          date: new Date(response.time * 1000),
-          temperature: response.temperature.current,
-          description: response.condition.description,
-          icon: `./images/${response.condition.icon}.png`,
-          wind: response.wind.speed,
-          humidity: response.temperature.humidity,
-          pressure: response.temperature.pressure,
-        });
+        setWeather(response, setWeatherData);
       })
       .catch(() => setErrorMessage('Oops! Seems like we could not load any data. Try again later!'))
-      .finally(() => {
-        setIsLoading(false);
-        setErrorMessage('');
-      });
+      .finally(() => setIsLoading(false));
   }, []);
 
   return (
@@ -50,25 +41,22 @@ export const WeatherApp: React.FC = () => {
           </h1>
         )}
 
-        {weatherData && !isLoading ? (
+        {isLoading && <Loader />}
+
+        {weatherData.city && (
           <div className="Weather">
             <div className="Weather__container">
-              <SearchBox
-                setWeatherData={setWeatherData}
-                setErrorMessage={setErrorMessage}
-              />
+              <SearchBox />
 
-              <TodayWeather data={weatherData} />
+              <TodayWeather />
             </div>
 
-            <Forecast
-              longitude={weatherData.longitude}
-              latitude={weatherData.latitude}
-            />
-
+            <Forecast />
+            
             <Footer />
           </div>
-        ) : <Loader />}
+        )}
+
       </div>
     </div>
   );

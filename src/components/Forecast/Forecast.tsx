@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react';
+import { useWeather } from '../../hooks/useWeather';
 import { getForecast } from '../../services/forecast';
 import { ForecastDay } from '../../types/ForecastDay';
 import { WeekDay } from '../WeekDay';
 
 import './Forecast.scss';
 
-type Props = {
-  latitude: number;
-  longitude: number;
-};
-
-export const Forecast: React.FC<Props> = ({ latitude, longitude }) => {
+export const Forecast: React.FC = () => {
+  const { weatherData } = useWeather();
+  const { latitude, longitude } = weatherData;
   const [forecastData, setForecastData] = useState<ForecastDay[]>([]);
 
   useEffect(() => {

@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { getCityWeather } from '../../services/weather';
-import { Weather } from '../../types/Weather';
+import { useWeather } from '../../hooks/useWeather';
+import { getCityWeather, setWeather } from '../../services/weather';
 
 import './SearchBox.scss';
 
-type Props = {
-  setWeatherData: (value: Weather) => void;
-  setErrorMessage: (value: string) => void;
-};
+export const SearchBox: React.FC = () => {
+  const {
+    setWeatherData,
+    setIsLoading,
+    setErrorMessage,
+  } = useWeather();
 
-export const SearchBox: React.FC<Props> = ({
-  setWeatherData,
-  setErrorMessage,
-}) => {
   const [city, setCity] = useState('');
 
   const updateCity = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,28 +20,19 @@ export const SearchBox: React.FC<Props> = ({
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    setErrorMessage('');
-
     if (!city.trim()) {
       return;
     }
 
+    setIsLoading(true);
+    setErrorMessage('');
+
     getCityWeather(city)
       .then(response => {
-        setWeatherData({
-          city: response.city,
-          latitude: response.coordinates.latitude,
-          longitude: response.coordinates.longitude,
-          date: new Date(response.time * 1000),
-          temperature: response.temperature.current,
-          description: response.condition.description,
-          icon: `./images/${response.condition.icon}.png`,
-          wind: response.wind.speed,
-          humidity: response.temperature.humidity,
-          pressure: response.temperature.pressure,
-        });
+        setWeather(response, setWeatherData);
       })
-      .catch(() => setErrorMessage('Oops! Seems like we could not load any data. Try again later!'));
+      .catch(() => setErrorMessage('Oops! Seems like we could not load any data. Try again!'))
+      .finally(() => setIsLoading(false));
 
     setCity('');
   }
