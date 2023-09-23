@@ -47,63 +47,8 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    &--broken-clouds-day {
-      background-image: url('../../../public/images/broken-clouds-day.png');
-    }
-    &--broken-clouds-night {
-      background-image: url('../../../public/images/broken-clouds-night.png');
-    }
-    &--clear-sky-day {
-      background-image: url('../../../public/images/clear-sky-day.png');
-    }
-    &--clear-sky-night {
-      background-image: url('../../../public/images/clear-sky-night.png');
-    }
-    &--few-clouds-day {
-      background-image: url('../../../public/images/few-clouds-day.png');
-    }
-    &--few-clouds-night{
-      background-image: url('../../../public/images/few-clouds-night.png');
-    }
-    &--mist-day {
-      background-image: url('../../../public/images/mist-day.png');
-    }
-    &--mist-night {
-      background-image: url('../../../public/images/mist-night.png');
-    }
-    &--rain-day {
-      background-image: url('../../../public/images/rain-day.png');
-    }
-    &--rain-night {
-      background-image: url('../../../public/images/rain-night.png');
-    }
-    &--scattered-clouds-day {
-      background-image: url('../../../public/images/scattered-clouds-day.png');
-    }
-    &--scattered-clouds-night {
-      background-image: url('../../../public/images/scattered-clouds-night.png');
-    }
-    &--shower-rain-day {
-      background-image: url('../../../public/images/shower-rain-day.png');
-    }
-    &--shower-rain-night {
-      background-image: url('../../../public/images/shower-rain-night.png');
-    }
-    &--snow-day {
-      background-image: url('../../../public/images/snow-day.png');
-    }
-    &--snow-night {
-      background-image: url('../../../public/images/snow-night.png');
-    }
-    &--thunderstorm-day {
-      background-image: url('../../../public/images/thunderstorm-day.png');
-    }
-    &--thunderstorm-night {
-      background-image: url('../../../public/images/thunderstorm-night.png');
-    }
-
-    @include onPhone {
-      max-width: 228px;
+    @include onTablet {
+      background-size: contain;
     }
   }
 

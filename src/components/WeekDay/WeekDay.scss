@@ -14,6 +14,10 @@
     padding: 6px 20px;
   }
 
+  @include onPhone {
+    box-sizing: border-box;
+  }
+
   &__day {
     color: $light-grey;
   }

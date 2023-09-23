@@ -17,6 +17,8 @@ export const TodayWeather: React.FC= () => {
     pressure
   } = weatherData;
 
+  const backgroundImage = require(`../../../public/images/${icon}.png`);
+
   return (
     <div className="TodayWeather">
       <div className="TodayWeather__main-info">
@@ -29,7 +31,10 @@ export const TodayWeather: React.FC= () => {
           </div>
           <TemperatureSection />
         </div>
-        <div className={`TodayWeather__img TodayWeather__img--${icon}`}>
+        <div 
+          className="TodayWeather__img"
+          style={{backgroundImage: `url(${backgroundImage})`}}
+        >
           {' '}
         </div>
       </div>
