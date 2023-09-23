@@ -4,19 +4,24 @@ import { useWeather } from '../../hooks/useWeather';
 
 import './TemperatureSection.scss';
 
+enum TemperatureUnit {
+  Celsius = 'C',
+  Imperial = 'F',
+}
+
 export const TemperatureSection: React.FC = () => {
   const { weatherData } = useWeather();
   const { temperature: celsius, description } = weatherData;
-  const [unit, setUnit] = useState('celsius');
+  const [unit, setUnit] = useState(TemperatureUnit.Celsius);
 
   function showFahrenheit(event: React.MouseEvent<HTMLAnchorElement>) {
     event.preventDefault();
-    setUnit('imperial');
+    setUnit(TemperatureUnit.Imperial);
   }
 
   function showCelsius(event: React.MouseEvent<HTMLAnchorElement>) {
     event.preventDefault();
-    setUnit('celsius');
+    setUnit(TemperatureUnit.Celsius);
   }
 
   function celsiusToFahrenheit(celsius: number) {
@@ -30,23 +35,23 @@ export const TemperatureSection: React.FC = () => {
   return (
     <div className="TemperatureSection">
       <div className="TemperatureSection__temperature">{
-        unit === 'celsius' ? Math.round(celsius) : Math.round(celsiusToFahrenheit(celsius))
+        unit === TemperatureUnit.Celsius ? Math.round(celsius) : Math.round(celsiusToFahrenheit(celsius))
       }°</div>
       <div className="TemperatureSection__scale-switcher">
         <div className={cn("scale", {
-          'scale--turned-off': unit !== 'celsius',
+          'scale--turned-off': unit === TemperatureUnit.Imperial,
         })}
         >
           <a href="/" className="scale__link" onClick={showCelsius}>
-            C
+            {TemperatureUnit.Celsius}
           </a>
         </div>
         <div className={cn("scale", {
-          'scale--turned-off': unit === 'celsius',
+          'scale--turned-off': unit === TemperatureUnit.Celsius,
         })}
         >
           <a href="/" className="scale__link" onClick={showFahrenheit}>
-            F
+            {TemperatureUnit.Imperial}
           </a>
         </div>
       </div>

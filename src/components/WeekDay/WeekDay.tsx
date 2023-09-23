@@ -1,4 +1,5 @@
 import { ForecastDay } from '../../types/ForecastDay';
+import { WEEKDAYS, MONTHS } from '../../utils/dateConstants';
 
 import './WeekDay.scss';
 
@@ -19,37 +20,15 @@ export const WeekDay: React.FC<Props> = ({ data }) => {
 
   function formatDay(timestamp: number) {
     const date = new Date(timestamp * MILLIS);
-    const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    const day = days[date.getDay()];
+    const day = WEEKDAYS[date.getDay()];
     return day;
   }
 
   function formatDate(timestamp: number) {
     const date = new Date(timestamp * MILLIS);
     const day = date.getDate();
-    const months = [
-      "01",
-      "02",
-      "03",
-      "04",
-      "05",
-      "06",
-      "07",
-      "08",
-      "09",
-      "10",
-      "11",
-      "12",
-    ];
-    const month = months[date.getMonth()];
+
+    const month = MONTHS[date.getMonth()];
     return `${day}/${month}`;
   }
 

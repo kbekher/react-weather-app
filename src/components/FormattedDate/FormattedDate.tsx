@@ -1,23 +1,13 @@
 import { useWeather } from '../../hooks/useWeather';
+import { WEEKDAYS } from '../../utils/dateConstants';
 
 export const FormattedDate: React.FC = () => {
-
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
   const { weatherData } = useWeather();
   const { date } = weatherData;
 
   const hours = date.getHours();
   const minutes = date.getMinutes();
-  const day = days[date.getDay()];
+  const day = WEEKDAYS[date.getDay()];
 
   const maxValue = 10;
 
