@@ -6,6 +6,9 @@ import { WeekDay } from '../WeekDay';
 
 import './Forecast.scss';
 
+const FIRST_WEEK_DAY = 1;
+const LAST_WEEK_DAY = 7;
+
 export const Forecast: React.FC = () => {
   const { weatherData } = useWeather();
   const { latitude, longitude } = weatherData;
@@ -22,7 +25,7 @@ export const Forecast: React.FC = () => {
     <div className="Forecast">
       <div className="Forecast__container">
         {forecastData.map((dailyForecast, index) => {
-          if (index > 0 && index < 7) {
+          if (index >= FIRST_WEEK_DAY && index < LAST_WEEK_DAY) {
             return (
               <div className="Forecast__weekday" key={index}>
                 <WeekDay data={dailyForecast} />

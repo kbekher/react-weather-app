@@ -19,14 +19,18 @@ export const TemperatureSection: React.FC = () => {
     setUnit('celsius');
   }
 
-  function fahrenheit() {
-    return (celsius * 9) / 5 + 32;
+  function celsiusToFahrenheit(celsius: number) {
+    const ratio = 9 / 5;
+    const offset = 32;
+
+    const fahrenheit = (celsius * ratio) + offset;
+    return fahrenheit;
   }
 
   return (
     <div className="TemperatureSection">
       <div className="TemperatureSection__temperature">{
-        unit === 'celsius' ? Math.round(celsius) : Math.round(fahrenheit())
+        unit === 'celsius' ? Math.round(celsius) : Math.round(celsiusToFahrenheit(celsius))
       }°</div>
       <div className="TemperatureSection__scale-switcher">
         <div className={cn("scale", {

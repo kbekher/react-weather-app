@@ -1,14 +1,8 @@
 import { useWeather } from '../../hooks/useWeather';
 
-export const FormattedDate: React.FC= () => {
-  const { weatherData } = useWeather();
-  const { date } = weatherData;
+export const FormattedDate: React.FC = () => {
 
-  let hours = date.getHours();
-
-  let minutes = date.getMinutes();
-
-  let days = [
+  const days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -17,11 +11,25 @@ export const FormattedDate: React.FC= () => {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
+
+  const { weatherData } = useWeather();
+  const { date } = weatherData;
+
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const day = days[date.getDay()];
+
+  const maxValue = 10;
 
   return (
     <div className="FormattedDate">
-       {day} {hours < 10 ? `0${hours}` : hours}:{minutes < 10 ? `0${minutes}` : minutes}
+      {day} {hours < maxValue
+        ? `0${hours}`
+        : hours
+      }:{minutes < maxValue
+        ? `0${minutes}`
+        : minutes
+      }
     </div>
   );
 };

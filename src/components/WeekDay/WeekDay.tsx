@@ -6,6 +6,8 @@ type Props = {
   data: ForecastDay;
 };
 
+const MILLIS = 1000;
+
 export const WeekDay: React.FC<Props> = ({ data }) => {
   const {
     condition,
@@ -16,8 +18,8 @@ export const WeekDay: React.FC<Props> = ({ data }) => {
   let tempValue = Math.round(temperature.day);
 
   function formatDay(timestamp: number) {
-    let date = new Date(timestamp * 1000);
-    let days = [
+    const date = new Date(timestamp * MILLIS);
+    const days = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -26,14 +28,14 @@ export const WeekDay: React.FC<Props> = ({ data }) => {
       "Friday",
       "Saturday",
     ];
-    let day = days[date.getDay()];
+    const day = days[date.getDay()];
     return day;
   }
 
   function formatDate(timestamp: number) {
-    let date = new Date(timestamp * 1000);
-    let day = date.getDate();
-    let months = [
+    const date = new Date(timestamp * MILLIS);
+    const day = date.getDate();
+    const months = [
       "01",
       "02",
       "03",
@@ -47,7 +49,7 @@ export const WeekDay: React.FC<Props> = ({ data }) => {
       "11",
       "12",
     ];
-    let month = months[date.getMonth()];
+    const month = months[date.getMonth()];
     return `${day}/${month}`;
   }
 
