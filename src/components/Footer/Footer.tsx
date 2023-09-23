@@ -3,7 +3,7 @@ import './Footer.scss';
 export const Footer: React.FC = () => (
   <footer className="Footer">
     <p>
-      This project was coded by{" "}
+      This project was coded by 
       <a
         href="https://github.com/kbekher"
         target="_blank"
@@ -11,7 +11,7 @@ export const Footer: React.FC = () => (
         className="Footer__link"
       >
         Kristina Bekher
-      </a>{" "}
+      </a> 
       and is
       <a
         href="https://github.com/kbekher/react-weather-app/tree/master"
@@ -19,9 +19,8 @@ export const Footer: React.FC = () => (
         rel="noreferrer"
         className="Footer__link"
       >
-        {" "}
         open-sourced on GitHub
-      </a>{" "}
+      </a>
     </p>
   </footer>
 )
