@@ -34,8 +34,7 @@ export const WeatherApp: React.FC = () => {
   return (
     <div className="WeatherApp">
       <div className="WeatherApp__container">
-
-      {errorMessage && (
+        {errorMessage && (
           <h1 className="WeatherApp__error-message">
             {errorMessage}
           </h1>
